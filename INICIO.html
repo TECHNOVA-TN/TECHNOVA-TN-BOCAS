@@ -156,7 +156,22 @@ color: black;
 font-size: 20px;
 text-align: justify;
 }
+.chatbot-container {
+        position: relative; /* Para posicionar el botón */
+    }
 
+    #cerrar-chatbot {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1000; /* Asegura que el botón esté sobre el iframe */
+        background: #ff4444;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 3px;
+    }
 
 
  </style>
@@ -212,15 +227,21 @@ text-align: justify;
 
      <li><p> TECNICA  <a href="mailto:zaorimartinez@cecyteslp.edu.com">ZAORI MARTINEZ</a></p></li>
     </ul>
-<iframe 
-        src="https://www.chatbase.co/chatbot-iframe/PPLjpug4n1xPsj2e2V7a9" 
+<div class="chatbot-container">
+    <button id="cerrar-chatbot">× Cerrar</button>
+    <iframe 
+        src="https://www.chatbase.co/chatbot-iframe/PPLjpug4nlxPsj2c2V7a8" 
         width="100%" 
         height="500px"
     ></iframe>
-
+</div>
 <footer>
 <p> ° 2025 TECHNOVA. TODOS LOS DERECHOS RESERVADOS.</p></footer>   
-
+<script>
+    document.getElementById("cerrar-chatbot").addEventListener("click", function() {
+        document.querySelector(".chatbot-container").style.display = "none";
+    });
+</script>
 </body>
 
 </html>
